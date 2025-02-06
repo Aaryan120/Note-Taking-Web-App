@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Note-Taking Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack Note-Taking Web App built using **React.js, Node.js, Express.js, and MongoDB**. This app allows users to create, manage, and search notes efficiently. It supports **text, URLs, and audio input**, with audio being transcribed into text using the **Browser Web Speech API**. The app also integrates **Cloudinary** for media storage and **JWT authentication** for secure access.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **User Authentication:** Sign-up and login using JWT authentication.
+- **Create Notes:** Add notes using text input or by recording audio (transcribed to text).
+- **Manage Notes:** Edit, delete, rename, and favorite notes.
+- **Search Notes:** Search across all notes in real-time.
+- **Audio Transcription:** Converts recorded speech into text.
+- **Image Uploads:** Attach images to notes using Cloudinary.
+- **Clipboard Support:** Easily copy notes with one click.
+- **Sorting & Filtering:** View notes from oldest to newest.
+- **Responsive UI:** Built with **Next.js/React**, styled with **Tailwind CSS & ShadCN**.
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:** React.js, Next.js, Tailwind CSS, ShadCN
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** JWT (JSON Web Tokens)
+- **Media Storage:** Cloudinary
+- **Speech Recognition:** Web Speech API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 📦 Installation & Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1️⃣ Clone the repository
+```sh
+git clone https://github.com/your-username/note-taking-app.git
+cd note-taking-app
+2️⃣ Install dependencies
+Backend
+sh
+Copy
+Edit
+cd server
+npm install
+Frontend
+sh
+Copy
+Edit
+cd client
+npm install
+3️⃣ Set up environment variables
+Create a .env file in both server and client directories.
 
-### `npm run build`
+Backend .env file:
+ini
+Copy
+Edit
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+Frontend .env file:
+REACT_APP_API_URL=http://localhost:5000
+4️⃣ Start the development server
+Backend
+sh
+Copy
+Edit
+cd server
+npm start
+Frontend
+sh
+Copy
+Edit
+cd client
+npm start
+```
+## 🚀 Usage
+- Sign up / Log in using your credentials.
+- Create a note using text or the record button.
+- Manage notes by editing, deleting, and favoriting them.
+- Search for notes using the search bar.
+- Upload images and attach them to notes.
+- Copy notes to the clipboard with one click.
+## 📝 License
+- This project is licensed under the MIT License. Feel free to modify and use it as needed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🤝 Contributing
+Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🌟 Acknowledgments
+MongoDB for database management.
+Cloudinary for image hosting.
+Web Speech API for speech-to-text transcription.
+Tailwind CSS for styling.
+✨ Made with ❤️ by Raj Aryan ✨
