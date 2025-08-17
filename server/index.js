@@ -18,8 +18,19 @@ const PORT = process.env.PORT || 4000;
 app.use(express.json());
 app.use(
     cors({
-        // origin:'http://localhost:3000',
-        origin:'https://note-taking-web-app-delta.vercel.app/',
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "http://localhost:3001",
+                "https://note-taking-web-app-delta.vercel.app/",
+                "https://note-taking-web-app-raj-aryans-projects-9e1bf71a.vercel.app/",
+                "https://note-taking-web-app-git-main-raj-aryans-projects-9e1bf71a.vercel.app/"
+            ];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials:true,
     })
 )
