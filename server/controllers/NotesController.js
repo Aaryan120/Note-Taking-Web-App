@@ -33,14 +33,14 @@ exports.createNotes = async (req,res) =>{
         if(req.files && req.files.imageFile){
             const images = Array.isArray(req.files.imageFile) ? req.files.imageFile : [req.files.imageFile];
             for(const image of images){
-                const result = await uploadFilesToCloudinary(image,process.env.FOLDER_NAME);
+                const result = await uploadFilesToCloudinary(image,process.env.CLOUDINARY_FOLDER_NAME);
                 imageUrls.push(result.secure_url)
             }
         }
         let audioUrl = ''
         if(req.files && req.files.audio){
             const audioData = Array.isArray(req.files.audio) ? req.files.audio[0] : req.files.audio;
-            const result = await uploadFilesToCloudinary(audioData,process.env.FOLDER_NAME);
+            const result = await uploadFilesToCloudinary(audioData,process.env.CLOUDINARY_FOLDER_NAME);
             audioUrl = result.secure_url;
         }
         console.log("PRINTING IMAGE URLS",imageUrls);
@@ -100,14 +100,14 @@ exports.updateNotes = async (req,res) =>{
             let imageUrls = noteDetails.noteImages ? [...noteDetails.noteImages] : [];
             const images = Array.isArray(req.files.imageFile) ? req.files.imageFile : [req.files.imageFile];
             for (const image of images) {
-              const result = await uploadFilesToCloudinary(image, process.env.FOLDER_NAME);
+              const result = await uploadFilesToCloudinary(image, process.env.CLOUDINARY_FOLDER_NAME);
               imageUrls.push(result.secure_url);
             }
             noteDetails.noteImages = imageUrls;
           }
         if (req.files && req.files.audioFile) {
             const audioData = Array.isArray(req.files.audioFile) ? req.files.audioFile[0] : req.files.audioFile;
-            const result = await uploadFilesToCloudinary(audioData, process.env.FOLDER_NAME);
+            const result = await uploadFilesToCloudinary(audioData, process.env.CLOUDINARY_FOLDER_NAME);
             noteDetails.audioUrl = result.secure_url;
         }
         for(const key in updates){
