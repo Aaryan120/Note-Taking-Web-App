@@ -21,9 +21,9 @@ app.use(
         origin: (origin, callback) => {
             const allowedOrigins = [
                 "http://localhost:3001",
-                "https://note-taking-web-app-delta.vercel.app/",
-                "https://note-taking-web-app-raj-aryans-projects-9e1bf71a.vercel.app/",
-                "https://note-taking-web-app-git-main-raj-aryans-projects-9e1bf71a.vercel.app/"
+                "https://note-taking-web-app-delta.vercel.app",
+                "https://note-taking-web-app-raj-aryans-projects-9e1bf71a.vercel.app",
+                "https://note-taking-web-app-git-main-raj-aryans-projects-9e1bf71a.vercel.app"
             ];
             if (!origin || allowedOrigins.includes(origin)) {
                 callback(null, true);
