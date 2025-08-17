@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(
     cors({
         // origin:'http://localhost:3000',
-        origin:'https://note-taking-web-app-kbrf.onrender.com',
+        origin:'https://note-taking-web-app-delta.vercel.app/',
         credentials:true,
     })
 )
