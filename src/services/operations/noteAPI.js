@@ -82,7 +82,7 @@ export const getUserNote = async (token,navigate) =>{
         })
 
         if(!response.data.success){
-            if(response.data.message === "Token is Invalid"){
+            if(response.data.message === "Token is invalid"){
                 navigate("/login");
             }
             throw new Error(response.data.message);
