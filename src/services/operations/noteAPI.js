@@ -73,7 +73,7 @@ export const deleteNote = async (data,token) =>{
 }
 
 
-export const getUserNote = async (token) =>{
+export const getUserNote = async (token,navigate) =>{
     let result = [];
     const toastId = toast.loading("Loading...")
     try {
@@ -81,8 +81,10 @@ export const getUserNote = async (token) =>{
             Authorization:`Bearer ${token}`
         })
 
-
         if(!response.data.success){
+            if(response.data.message === "Token is Invalid"){
+                navigate("/login");
+            }
             throw new Error(response.data.message);
         }
 

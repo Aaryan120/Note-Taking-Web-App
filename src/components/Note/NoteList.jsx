@@ -3,14 +3,16 @@ import { useSelector } from 'react-redux';
 import { getUserNote } from '../../services/operations/noteAPI';
 import toast from 'react-hot-toast';
 import NoteCard from "./NoteCard"
+import { useNavigate } from 'react-router-dom';
 const NoteList = ({onFavorite}) => {
   const [notes,setNotes] = useState([]);
   const {token} = useSelector((state) => state.auth)
   const {sortOrder,searchNote} = useSelector((state) => state.note);
   // const [selectedNotes,setSelectedNotes] = useState(null);
+  const navigate = useNavigate()
   useEffect(() =>{
     const fetchNotes = async () =>{
-      const response = await getUserNote(token);
+      const response = await getUserNote(token,navigate);
       if(!response){
         toast.error("Could not get notes");
       }
